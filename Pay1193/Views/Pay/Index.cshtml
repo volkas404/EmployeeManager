@@ -1,0 +1,81 @@
+﻿@model IEnumerable<PayIndexViewModel>
+
+@{
+    ViewBag.Title = "Pays";
+}
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Pay List</li>
+                </ol>
+            </nav><br />
+            <div class="row">
+                <a class="btn btn-xs btn-outline-success float-md-right"
+                    asp-controller="Pay" asp-action="Create"
+                >Create Pay</a>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th>EmployeeId</th>
+                            <th>null</th>
+                            <th>Tax</th>
+                            <th>UnionFee</th>
+                            <th>null</th>
+                            <th>NetPayment</th>
+                            <th>DatePay</th>
+                            <th>null</th>
+                            <th class="text-warning">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var item in Model) 
+                        {
+                            <tr>
+                                <td>
+                                    <a>@item.EmployeeId</a>
+                                </td>
+                                <td>
+                                    null
+                                </td>
+                                <td>
+                                    @item.Tax
+                                </td>
+                                <td>
+                                    @item.UnionFee
+                                </td>
+                                <td>
+                                    null
+                                </td>
+                                <td>@item.NetPayment</td>
+                                <td>@item.DatePay</td>
+                                <td>
+                                    <a class="text-primary" 
+                                    asp-controller="Pay" 
+                                    asp-action="Detail"
+                                    asp-route-id="@item.Id"><i class="fas fa-bars"></i>Detail</a>
+
+                                   <a class="text-success"
+                                   asp-controller="Pay"
+                                   asp-action="Edit"
+                                   asp-route-id="@item.Id"><i class="fas fa-edit"></i>Edit</a>
+
+                                   <a class="text-danger"
+                                   asp-controller="Pay"
+                                   asp-action="Delete"
+                                   asp-route-id="@item.Id"><i class="fas fa-trash-alt"></i>Delete</a>
+                                </td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+          
+        </div>
+    </div>
+</div>
