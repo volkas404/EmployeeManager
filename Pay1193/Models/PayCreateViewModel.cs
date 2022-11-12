@@ -21,7 +21,7 @@ namespace Pay1193.Models
         [Required(ErrorMessage = "ContractualHours is required")]
         public Decimal ContractualHours { get; set; }
         [Required(ErrorMessage = "OvertimeHours is required")]
-        public Decimal OvertimeHours { get; set; }
         public Decimal SLC { get; set; }
+        public Decimal UnionFee { get; set; }
     }
 }

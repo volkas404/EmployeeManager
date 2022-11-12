@@ -25,8 +25,13 @@ namespace Pay1193.Controllers
             {
                 Id = pay.Id,
                 EmployeeId = pay.EmployeeId,
+                ContractualEarnings = pay.ContractualEarnings,
+                OvertimeEarnings = pay.OvertimeEarnings,
                 NiC = pay.NiC,
                 Tax = pay.Tax,
+                SLC = pay.SLC,
+                TotalEarnings = pay.TotalEarnings,
+                EarningDeduction = pay.EarningDeduction,
                 UnionFee = pay.UnionFee,
                 DatePay = pay.DatePay,
                 NetPayment = pay.NetPayment
@@ -45,25 +50,37 @@ namespace Pay1193.Controllers
         {
             if (ModelState.IsValid)
             {
+                var overtimehours = _payService.OverTimeHours(model.HourWorked, model.ContractualHours);
+                var overtimerate = _payService.OvertimeRate(model.HourlyRate);
+                var contractualearning = _payService.ContractualEarnings(model.ContractualHours,
+                    model.HourWorked, model.HourlyRate);
+                var overtimeearning = _payService.OvertimeEarnings(overtimehours, overtimerate);
+                var total = _payService.TotalEarning(contractualearning, overtimeearning);
+                var tax = _taxService.TaxAmount(total);
+                var nic = _nationalInsuranceService.NIContribution(total);
+                var deduction = _payService.TotalDeduction(tax, nic, model.SLC, model.UnionFee);
+                var netpay = _payService.NetPay(total, deduction);
                 var pay = new PaymentRecord
                 {
                     Id = model.Id,
                     EmployeeId = model.EmployeeId,
+                    TaxYearId = 1,
                     TaxCode = model.TaxCode,
                     DatePay = model.DatePay,
                     MonthPay = model.DatePay,
                     HourlyRate = model.HourlyRate,
                     HourWorked = model.HourWorked,
+                    OvertimeHours = overtimehours,
                     ContractualHours = model.ContractualHours,
-                    OvertimeHours = model.OvertimeHours,
-                    ContractualEarnings = _payService.ContractualEarnings(model.ContractualHours, model.HourWorked, model.HourlyRate),
-                    OvertimeEarnings = 1,
-                    NiC = 1,
-                    Tax = 1,
-                    UnionFee = 1,
-                    TotalEarnings = 1,
-                    EarningDeduction = 1,
-                    NetPayment =1,
+                    ContractualEarnings = contractualearning,
+                    OvertimeEarnings = overtimeearning,
+                    NiC = nic,
+                    Tax = tax,
+                    UnionFee = model.UnionFee,
+                    SLC = model.SLC,
+                    TotalEarnings = total,
+                    EarningDeduction = deduction,
+                    NetPayment =netpay,
                 };
                 await _payService.CreateAsync(pay);
                 return RedirectToAction("Index");

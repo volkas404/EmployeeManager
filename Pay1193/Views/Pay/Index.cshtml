@@ -21,14 +21,17 @@
                 <table class="table table-striped table-dark">
                     <thead>
                         <tr>
-                            <th>EmployeeId</th>
-                            <th>null</th>
+                            <th>E.Id</th>
+                            <th>C.Earnings</th>
+                            <th>O.Earnings</th>
+                            <th>NiC</th>
                             <th>Tax</th>
                             <th>UnionFee</th>
-                            <th>null</th>
+                            <th>SLC</th>
+                            <th>Total</th>
+                            <th>Deduction</th>
                             <th>NetPayment</th>
                             <th>DatePay</th>
-                            <th>null</th>
                             <th class="text-warning">Action</th>
                         </tr>
                     </thead>
@@ -40,7 +43,13 @@
                                     <a>@item.EmployeeId</a>
                                 </td>
                                 <td>
-                                    null
+                                    @item.ContractualEarnings
+                                </td>
+                                <td>
+                                    @item.OvertimeEarnings
+                                </td>
+                                <td>
+                                    @item.NiC
                                 </td>
                                 <td>
                                     @item.Tax
@@ -49,7 +58,13 @@
                                     @item.UnionFee
                                 </td>
                                 <td>
-                                    null
+                                    @item.SLC
+                                </td>
+                                <td>
+                                    @item.TotalEarnings
+                                </td>
+                                <td>
+                                    @item.EarningDeduction
                                 </td>
                                 <td>@item.NetPayment</td>
                                 <td>@item.DatePay</td>
