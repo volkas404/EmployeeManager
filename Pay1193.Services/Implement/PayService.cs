@@ -17,7 +17,7 @@ namespace Pay1193.Services.Implement
         {
             _context = context;
         }
-        public decimal ContractualEarning(decimal contractualHours, decimal hoursWorked, decimal hourlyRate)
+        public decimal ContractualEarnings(decimal contractualHours, decimal hoursWorked, decimal hourlyRate)
         {
             if(hoursWorked < contractualHours)
             {

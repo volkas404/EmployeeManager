@@ -14,7 +14,7 @@ namespace Pay1193.Services
         TaxYear GetTaxYearById(int id);
         IEnumerable<PaymentRecord> GetAll();
         decimal OverTimeHours(decimal hoursWorked, decimal contractualHours);
-        decimal ContractualEarning(decimal contractualHours, decimal hoursWorked, decimal hourlyRate);
+        decimal ContractualEarnings(decimal contractualHours, decimal hoursWorked, decimal hourlyRate);
         decimal OvertimeRate(decimal hourlyRate);
         decimal OvertimeEarnings(decimal overtimeEarnings, decimal contractualEarnings);
         decimal TotalDeduction(decimal tax, decimal nic, decimal studentLoanRepayment, decimal unionFees);

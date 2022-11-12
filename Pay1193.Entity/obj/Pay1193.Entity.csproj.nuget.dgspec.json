@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {}
+    "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {}
   },
   "projects": {
-    "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {
+    "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj",
+        "projectUniqueName": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj",
         "projectName": "Pay1193.Entity",
-        "projectPath": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj",
+        "projectPath": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pay1193-main\\Pay1193.Entity\\obj\\",
+        "outputPath": "D:\\mohinhphanlop\\Pay1193.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

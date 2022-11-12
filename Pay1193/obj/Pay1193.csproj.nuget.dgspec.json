@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\pay1193-main\\Pay1193\\Pay1193.csproj": {}
+    "D:\\mohinhphanlop\\Pay1193\\Pay1193.csproj": {}
   },
   "projects": {
-    "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {
+    "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj",
+        "projectUniqueName": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj",
         "projectName": "Pay1193.Entity",
-        "projectPath": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj",
+        "projectPath": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pay1193-main\\Pay1193.Entity\\obj\\",
+        "outputPath": "D:\\mohinhphanlop\\Pay1193.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
+    "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj",
+        "projectUniqueName": "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj",
         "projectName": "Pay1193.Persistence",
-        "projectPath": "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj",
+        "projectPath": "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pay1193-main\\Pay1193.Persistence\\obj\\",
+        "outputPath": "D:\\mohinhphanlop\\Pay1193.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj"
               }
             }
           }
@@ -146,14 +146,14 @@
         }
       }
     },
-    "D:\\pay1193-main\\Pay1193.Services\\Pay1193.Services.csproj": {
+    "D:\\mohinhphanlop\\Pay1193.Services\\Pay1193.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pay1193-main\\Pay1193.Services\\Pay1193.Services.csproj",
+        "projectUniqueName": "D:\\mohinhphanlop\\Pay1193.Services\\Pay1193.Services.csproj",
         "projectName": "Pay1193.Services",
-        "projectPath": "D:\\pay1193-main\\Pay1193.Services\\Pay1193.Services.csproj",
+        "projectPath": "D:\\mohinhphanlop\\Pay1193.Services\\Pay1193.Services.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pay1193-main\\Pay1193.Services\\obj\\",
+        "outputPath": "D:\\mohinhphanlop\\Pay1193.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -170,11 +170,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj"
               },
-              "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj"
               }
             }
           }
@@ -214,14 +214,14 @@
         }
       }
     },
-    "D:\\pay1193-main\\Pay1193\\Pay1193.csproj": {
+    "D:\\mohinhphanlop\\Pay1193\\Pay1193.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\pay1193-main\\Pay1193\\Pay1193.csproj",
+        "projectUniqueName": "D:\\mohinhphanlop\\Pay1193\\Pay1193.csproj",
         "projectName": "Pay1193",
-        "projectPath": "D:\\pay1193-main\\Pay1193\\Pay1193.csproj",
+        "projectPath": "D:\\mohinhphanlop\\Pay1193\\Pay1193.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\pay1193-main\\Pay1193\\obj\\",
+        "outputPath": "D:\\mohinhphanlop\\Pay1193\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -238,14 +238,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Entity\\Pay1193.Entity.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Entity\\Pay1193.Entity.csproj"
               },
-              "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Persistence\\Pay1193.Persistence.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Persistence\\Pay1193.Persistence.csproj"
               },
-              "D:\\pay1193-main\\Pay1193.Services\\Pay1193.Services.csproj": {
-                "projectPath": "D:\\pay1193-main\\Pay1193.Services\\Pay1193.Services.csproj"
+              "D:\\mohinhphanlop\\Pay1193.Services\\Pay1193.Services.csproj": {
+                "projectPath": "D:\\mohinhphanlop\\Pay1193.Services\\Pay1193.Services.csproj"
               }
             }
           }
