@@ -36,6 +36,11 @@ namespace Pay1193.Services.Implement
             await _context.SaveChangesAsync();
         }
 
+        public Task UpdateAsync(PaymentRecord paymentRecord)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<PaymentRecord> GetAll()
         {
             return _context.PaymentRecords.ToList();
@@ -43,7 +48,14 @@ namespace Pay1193.Services.Implement
 
         public PaymentRecord GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.PaymentRecords.Where(u => u.Id == id).FirstOrDefault();
+        }
+
+        public async Task Delete(int id)
+        {
+            var pay = GetById(id);
+            _context.PaymentRecords.Remove(pay);
+            await _context.SaveChangesAsync();
         }
 
         public TaxYear GetTaxYearById(int id)

@@ -10,7 +10,9 @@ namespace Pay1193.Services
     public interface IPayService
     {
         Task CreateAsync(PaymentRecord paymentRecord);
+        Task UpdateAsync(PaymentRecord paymentRecord);
         PaymentRecord GetById(int id);
+        Task Delete(int id);
         TaxYear GetTaxYearById(int id);
         IEnumerable<PaymentRecord> GetAll();
         decimal OverTimeHours(decimal hoursWorked, decimal contractualHours);
