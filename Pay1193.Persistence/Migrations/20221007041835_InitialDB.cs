@@ -103,6 +103,14 @@ namespace Pay1193.Persistence.Migrations
                 name: "IX_PaymentRecords_TaxYearId",
                 table: "PaymentRecords",
                 column: "TaxYearId");
+            migrationBuilder.InsertData(
+                table: "TaxYears",
+                column: "YearOfTax",
+                new object[]
+                {
+                    "2022"
+                }
+                );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
