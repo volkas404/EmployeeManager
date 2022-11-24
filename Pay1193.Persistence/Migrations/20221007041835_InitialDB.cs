@@ -110,6 +110,8 @@ namespace Pay1193.Persistence.Migrations
                 column: "YearOfTax",
                 new object[]
                 {
+                    "2020",
+                    "2021",
                     "2022"
                 }
                 );
