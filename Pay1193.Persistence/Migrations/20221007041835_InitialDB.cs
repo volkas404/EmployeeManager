@@ -62,7 +62,7 @@ namespace Pay1193.Persistence.Migrations
                     FullName = table.Column<string>(maxLength: 100, nullable: true),
                     NiNo = table.Column<string>(nullable: true),
                     PayDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PayMonth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PayMonth = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     TaxYearId = table.Column<int>(type: "int", nullable: false),
                     TaxCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HourlyRate = table.Column<decimal>(type: "decimal(18,2)", nullable: false),

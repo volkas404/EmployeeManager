@@ -67,9 +67,9 @@ namespace Pay1193.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PayCreateViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var payRecord = new PaymentRecord()
+                var payRecord = new PaymentRecord
                 {
                     Id = model.Id,
                     EmployeeId = model.EmployeeId,

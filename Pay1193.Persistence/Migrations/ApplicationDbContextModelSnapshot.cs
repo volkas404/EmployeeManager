@@ -142,8 +142,8 @@ namespace Pay1193.Persistence.Migrations
                     b.Property<decimal>("HourlyRate")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("PayMonth")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("PayMonth")
+                        .HasMaxLength(100);
 
                     b.Property<decimal>("NIC")
                         .HasColumnType("Money");

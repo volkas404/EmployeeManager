@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ccPUiuN7xyWN8L3TBHtHFGJaawQCeHcqW5OhmNkHa5o=",
+  "Hash": "cZv+QOoGVPKINNBvG52jdq+dgpoLYvKtn7TPSe2AVvs=",
   "Source": "Pay1193",
   "BasePath": "_content/Pay1193",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\Emp.gif"
+    },
+    {
+      "Identity": "D:\\mohinhphanlop\\Pay1193\\wwwroot\\images\\employees\\2206101047.jpg",
+      "SourceId": "Pay1193",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\mohinhphanlop\\Pay1193\\wwwroot\\",
+      "BasePath": "_content/Pay1193",
+      "RelativePath": "images/employees/2206101047.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\employees\\2206101047.jpg"
     },
     {
       "Identity": "D:\\mohinhphanlop\\Pay1193\\wwwroot\\images\\employees\\2206344087.jpg",
