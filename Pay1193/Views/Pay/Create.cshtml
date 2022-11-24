@@ -1,106 +1,93 @@
 ﻿@model PayCreateViewModel
 
+@{ ViewBag.Title = "Pay Computation";}
+
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
-                    <li class="breadcrumb-item">
-                        <a asp-controller="Pay" asp-action="Index">Pay List</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">New Pay</li>
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="breadcrumb-item"><a asp-action="Index">Payroll List</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pay Computation</li>
                 </ol>
-            </nav><br />
-            <form method="post" asp-action="Create" enctype="multipart/form-data">
+            </nav><br /><br />
+            <form method="post" enctype="multipart/form-data" asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="EmployeeId"></label>
+                    <select asp-for="EmployeeId" class="form-control" asp-items="ViewBag.employees">
+                        <option selected>--- Select Employee ---</option>
+                    </select>
+                    <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                </div><br /><br /><br />
                 <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label asp-for="EmployeeId"></label>
+                    <div class="form-group col-md-1">
+                        <label asp-for="PayMonth"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="EmployeeId" value="" placeholder="Enter EmployeeId" />
-                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
+                        <select asp-for="PayMonth" class="form-control">
+                            <option selected>--- Select Month ---</option>
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                            <option>April</option>
+                            <option>May</option>
+                            <option>June</option>
+                            <option>July</option>
+                            <option>August</option>
+                            <option>September</option>
+                            <option>October</option>
+                            <option>November</option>
+                            <option>December</option>
+                        </select>
+                        <span asp-validation-for="PayMonth" class="text-danger"></span>
                     </div>
-
-                    <div class="col-md-2">
-                    </div>
-
-                    <div class="form-group col-md-2">
-                        <label asp-for="DatePay"></label>
+                    <div class="form-group col-md-1">
+                        <label asp-for="TaxYearId"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="date" class="form-control" value="" asp-for="DatePay" />
-                        <span asp-validation-for="DatePay" class="text-danger"></span>
+                        <select asp-for="TaxYearId" class="form-control" asp-items="ViewBag.taxYears">
+                            <option selected>--- Select Tax Year ---</option>
+                        </select>
+                        <span asp-validation-for="TaxYearId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label asp-for="PayDate"></label>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input asp-for="PayDate" class="form-control"/>
+                        <span asp-validation-for="PayDate"></span>
                     </div>
                 </div>
-
                 <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <label asp-for="TaxCode"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="TaxCode" value=""  placeholder="Enter TaxCode" />
-                        <span asp-validation-for="TaxCode" class="text-danger"></span>
-                    </div>
-
-                    <div class="col-md-2">
-                    </div>
-
-                    <div class="form-group col-md-2">
-                        <label asp-for="SLC"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="SLC" value="" placeholder="Enter SLC" />
-                        <span asp-validation-for="SLC"></span>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-1">
                         <label asp-for="HourlyRate"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="HourlyRate" value="" placeholder="Enter HourlyRate" />
-                        <span asp-validation-for="HourlyRate" class="text-danger"></span>
+                        <input asp-for="HourlyRate" class="form-control" placeholder="0.00" />
+                        <span asp-validation-for="HourlyRate"></span>
                     </div>
-
-                    <div class="col-md-2">
-                    </div>
-
-                    <div class="form-group col-md-2">
-                        <label asp-for="HourWorked"></label>
+                    <div class="form-group col-md-1">
+                        <label asp-for="HoursWorked"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="HourWorked" value="" placeholder="Enter HourWorked" />
-                        <span asp-validation-for="HourWorked" class="text-danger"></span>
+                        <input asp-for="HoursWorked" class="form-control" placeholder="0.00" />
+                        <span asp-validation-for="HoursWorked"></span>
                     </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-1">
                         <label asp-for="ContractualHours"></label>
                     </div>
                     <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="ContractualHours" value="" placeholder="Enter ContractualHours" />
-                        <span asp-validation-for="ContractualHours" class="text-danger"></span>
+                        <input asp-for="ContractualHours" class="form-control" />
+                        <span asp-validation-for="ContractualHours"></span>
                     </div>
-                    <div class="col-md-2">
-                    </div>
+                </div><br /><br />
 
-                    <div class="form-group col-md-2">
-                        <label asp-for="UnionFee"></label>
-                    </div>
-                    <div class="form-group col-md-3">
-                        <input type="text" class="form-control" asp-for="UnionFee" value="" placeholder="Enter UnionFee" />
-                        <span asp-validation-for="UnionFee" class="text-danger"></span>
-                    </div>
-                </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-secondary btn-rounded float-left" style="margin-right:auto.7em">Submit</button>
-                    <a asp-controller="Pay" asp-action="Index" class="btn btn-primary btn-rounded float-right" style="margin-right:auto.7em">Cancel</a>
+                    <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-calculator" style="margin-right:0.7em"></i>Compute & Save</button>
+                    <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back to Pay List</a>
+                    <br />
                     <br />
                     <br />
                 </div>
@@ -109,8 +96,6 @@
     </div>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_validationScriptsPartial");
-    }
+@section Scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

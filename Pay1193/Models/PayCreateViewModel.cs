@@ -7,21 +7,34 @@ namespace Pay1193.Models
     public class PayCreateViewModel
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Employee Number is required")]
-        [RegularExpression(@"^[0-9]$")]
         public int EmployeeId { get; set; }
-        [Required(ErrorMessage = "TaxCode is required"), StringLength(50, MinimumLength = 2)]
-        public string TaxCode { get; set; }
-        [DataType(DataType.Date), Display(Name = "DatePay")]
-        public DateTime DatePay { get; set; }
-        [Required(ErrorMessage = "HourlyRate is required")]
-        public Decimal HourlyRate { get; set; }
-        [Required(ErrorMessage = "HourWorked is required")]
-        public Decimal HourWorked { get; set; }
-        [Required(ErrorMessage = "ContractualHours is required")]
-        public Decimal ContractualHours { get; set; }
-        [Required(ErrorMessage = "OvertimeHours is required")]
-        public Decimal SLC { get; set; }
-        public Decimal UnionFee { get; set; }
+        public Employee Employee { get; set; }
+        [Display(Name = "FullName")]
+        public string FullName { get; set; }
+        public string NiNo { get; set; }
+        [DataType(DataType.Date), Display(Name = "Pay Date")]
+        public DateTime PayDate { get; set; } = DateTime.UtcNow;
+        [Display(Name = "Pay Month")]
+        public string PayMonth { get; set; } = DateTime.Today.Month.ToString();
+        [Display(Name = "Tax Year")]
+        public int TaxYearId { get; set; }
+        public TaxYear TaxYear { get; set; }
+        public string TaxCode { get; set; } = "1250L";
+        [Display(Name = "Hourly Rate")]
+        public decimal HourlyRate { get; set; }
+        [Display(Name = "Hours Worked")]
+        public decimal HoursWorked { get; set; }
+        [Display(Name = "Contractual Hours")]
+        public decimal ContractualHours { get; set; } = 144m;
+        public decimal OvertimeHours { get; set; }
+        public decimal ContractualEarnings { get; set; }
+        public decimal OvertimeEarnings { get; set; }
+        public decimal Tax { get; set; }
+        public decimal NIC { get; set; }
+        public decimal? UnionFee { get; set; }
+        public decimal? SLC { get; set; }
+        public decimal TotalEarnings { get; set; }
+        public decimal TotalDeduction { get; set; }
+        public decimal NetPayment { get; set; }
     }
 }

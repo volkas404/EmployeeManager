@@ -74,7 +74,7 @@ namespace Pay1193.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LatName")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
@@ -124,29 +124,34 @@ namespace Pay1193.Persistence.Migrations
                     b.Property<decimal>("ContractualHours")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("DatePay")
+                    b.Property<DateTime>("PayDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("EarningDeduction")
+                    b.Property<decimal>("TotalDeduction")
                         .HasColumnType("money");
 
                     b.Property<int>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("HourWorked")
+                    b.Property<string>("FullName")
+                        .HasMaxLength(100);
+
+                    b.Property<decimal>("HoursWorked")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("HourlyRate")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("MonthPay")
+                    b.Property<DateTime>("PayMonth")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("NetPayment")
-                        .HasColumnType("money");
+                    b.Property<decimal>("NIC")
+                        .HasColumnType("Money");
 
-                    b.Property<decimal>("NiC")
-                        .HasColumnType("money");
+                    b.Property<decimal>("NetPayment")
+                        .HasColumnType("Money");
+
+                    b.Property<string>("NiNo");
 
                     b.Property<decimal>("OvertimeEarnings")
                         .HasColumnType("money");

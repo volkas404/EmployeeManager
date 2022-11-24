@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Pay1193.Entity;
 using Pay1193.Persistence;
 using System;
@@ -11,55 +12,70 @@ namespace Pay1193.Services.Implement
 {
     public class EmployeeService : IEmployee
     {
+        private decimal studentLoanAmount;
         private readonly ApplicationDbContext _context;
         public EmployeeService(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        public async Task CreateAsync(Employee employee)
+        public async Task CreateAsync(Employee newEmployee)
         {
-            await _context.Employees.AddAsync(employee);
+            await _context.Employees.AddAsync(newEmployee);
             await _context.SaveChangesAsync();
         }
-
-        public Employee GetById(int id)
-        {
-            return _context.Employees.Where(u => u.Id == id).FirstOrDefault();
-        }
+        public Employee GetById(int employeeId) =>
+            _context.Employees.Where(e => e.Id == employeeId).FirstOrDefault();
 
         public async Task Delete(int employeeId)
         {
             var employee = GetById(employeeId);
-            _context.Employees.Remove(employee);
+            _context.Remove(employee);
             await _context.SaveChangesAsync();
         }
 
-        public IEnumerable<Employee> GetAll()
+        public IEnumerable<Employee> GetAll() => _context.Employees.AsNoTracking().OrderBy(emp => emp.FullName);
+
+        public async Task UpdateAsync(Employee employee)
         {
-            return _context.Employees.ToList();
+            _context.Update(employee);
+            await _context.SaveChangesAsync();
         }
 
-       
+        public async Task UpdateAsync(int id)
+        {
+            var employee = GetById(id);
+            _context.Update(employee);
+            await _context.SaveChangesAsync();
+        }
 
         public decimal StudentLoanRepaymentAmount(int id, decimal totalAmount)
         {
-            throw new NotImplementedException();
+            var employee = GetById(id);
+            if (employee.StudentLoan == StudentLoan.Yes && totalAmount > 1577)
+            {
+                studentLoanAmount = (totalAmount - 1577) * 0.09m;
+            }
+            else
+            {
+                studentLoanAmount = 0;
+            }
+            return studentLoanAmount;
         }
 
-        public decimal UnionFee(int id)
+        public decimal UnionFees(int id)
         {
-            throw new NotImplementedException();
+            var employee = GetById(id);
+            var fee = employee.UnionMember == UnionMember.Yes ? 10m : 0;
+            return fee;
         }
 
-        public Task UpdateAsync(Employee employee)
+        public IEnumerable<SelectListItem> GetAllEmployeesForPayroll()
         {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateById(int id)
-        {
-            throw new NotImplementedException();
+            return GetAll().Select(emp => new SelectListItem()
+            {
+                Text = emp.FullName,
+                Value = emp.Id.ToString()
+            });
         }
     }
 }
